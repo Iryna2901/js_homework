@@ -3,7 +3,7 @@ function checkProbabilityTheory(count) {
   let evens = 0;
 
   for (let i = 0; i < count; i++) {
-    let num = Math.floor(Math.random() * 901) + 100; // це те саме що Math.floor(Math.random() * (1000 - 100)) + 100;
+    let num = Math.floor(Math.random() * 901) + 100; // це те саме що Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
 
     if (num % 2 === 0) {
       evens++;
