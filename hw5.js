@@ -16,7 +16,7 @@ let services = {
     let min = Infinity;
     for (let key in this) {
       if (typeof this[key] === "string") {
-        let price = parseFloat(this[key]);
+        let price = Number.parseFloat(this[key]);
         if (price < min) {
           min = price;
         }
@@ -28,7 +28,7 @@ let services = {
     let max = -Infinity;
     for (let key in this) {
       if (typeof this[key] === "string") {
-        let price = parseFloat(this[key]);
+        let price = Number.parseFloat(this[key]);
         if (price > max) {
           max = price;
         }
@@ -40,7 +40,7 @@ let services = {
 
 services["Розбити скло"] = "200 грн";
 services["Педикюр"] = "120 грн";
-services["Манікюр"] = "70 грн";
+services["Манікюр"] = "100 грн";
 
 price = services.price();
 console.log(`Загальна вартість послуг: ${price} грн`);
