@@ -1,4 +1,4 @@
-var services = {
+let services = {
   стрижка: "60 грн",
   гоління: "80 грн",
   "Миття голови": "100 грн",
@@ -39,12 +39,12 @@ var services = {
 };
 
 services["Розбити скло"] = "200 грн";
-services["Педикюр"] = "50 грн";
+services["Педикюр"] = "120 грн";
 services["Манікюр"] = "70 грн";
 
 price = services.price();
 console.log(`Загальна вартість послуг: ${price} грн`);
 minPrice = services.minPrice();
-maxPrice = services.maxPrice();
 console.log(`Найдешевша послуга: ${minPrice} грн`);
+maxPrice = services.maxPrice();
 console.log(`Найдорожча послуга: ${maxPrice} грн`);
