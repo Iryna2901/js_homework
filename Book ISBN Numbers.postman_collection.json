@@ -1,0 +1,75 @@
+{
+  "info": {
+    "_postman_id": "1eb90835-7a41-4f66-b6c5-1baeb06c2bbb",
+    "name": "Book ISBN Numbers",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56482522",
+    "_collection_link": "https://go.postman.co/collection/56482522-1eb90835-7a41-4f66-b6c5-1baeb06c2bbb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Is Valid ISBN10 Number",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "text/xml; charset=utf-8"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <IsValidISBN10 xmlns=\"http://webservices.daehosting.com/ISBN\">\n      <sISBN>0-19-852663-6</sISBN>\n    </IsValidISBN10>\n  </soap:Body>\n</soap:Envelope>"
+        },
+        "url": {
+          "raw": "http://webservices.daehosting.com/services/isbnservice.wso",
+          "protocol": "http",
+          "host": [
+            "webservices",
+            "daehosting",
+            "com"
+          ],
+          "path": [
+            "services",
+            "isbnservice.wso"
+          ]
+        },
+        "description": "The test is done by calculation on the first 9 digits and compare the result with the checksum number at the end. You have to pass a 10 digits number or 8 digits and an X."
+      },
+      "response": []
+    },
+    {
+      "name": "Is Valid ISBN13 Number",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "text/xml; charset=utf-8"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n    <IsValidISBN13 xmlns=\"http://webservices.daehosting.com/ISBN\">\n      <sISBN>978-1-4612-9090-2</sISBN>\n    </IsValidISBN13>\n  </soap:Body>\n</soap:Envelope>"
+        },
+        "url": {
+          "raw": "http://webservices.daehosting.com/services/isbnservice.wso",
+          "protocol": "http",
+          "host": [
+            "webservices",
+            "daehosting",
+            "com"
+          ],
+          "path": [
+            "services",
+            "isbnservice.wso"
+          ]
+        },
+        "description": "The test is done by calculation on the first 12 digits and compare the result with the checksum number at the end. You have to pass a 13 digits number."
+      },
+      "response": []
+    }
+  ]
+}
