@@ -9,13 +9,65 @@
   "item": [
     {
       "name": "Is Valid ISBN10 Number",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response body is not empty\", function () {",
+              "    pm.expect(pm.response.text()).to.not.be.empty;",
+              "});",
+              "",
+              "pm.test(\"Response contains soap:Envelope\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"soap:Envelope\");",
+              "});",
+              "",
+              "pm.test(\"Response contains soap:Body\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"soap:Body\");",
+              "});",
+              "",
+              "pm.test(\"Response contains IsValidISBN10Response\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"IsValidISBN10Response\");",
+              "});",
+              "",
+              "pm.test(\"Response contains IsValidISBN10Result\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"IsValidISBN10Result\");",
+              "});",
+              "",
+              "pm.test(\"Response contains boolean result\", function () {",
+              "    const body = pm.response.text();",
+              "    pm.expect(body.includes(\"true\") || body.includes(\"false\")).to.be.true;",
+              "});",
+              "",
+              "pm.test(\"Content-Type header exists\", function () {",
+              "    pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true;",
+              "});",
+              "",
+              "pm.test(\"Content-Type is XML\", function () {",
+              "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"xml\");",
+              "});",
+              "",
+              "pm.test(\"Response does not contain SOAP Fault\", function () {",
+              "    pm.expect(pm.response.text()).to.not.include(\"soap:Fault\");",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
-            "type": "text",
-            "value": "text/xml; charset=utf-8"
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
           }
         ],
         "body": {
@@ -41,13 +93,65 @@
     },
     {
       "name": "Is Valid ISBN13 Number",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response body is not empty\", function () {",
+              "    pm.expect(pm.response.text()).to.not.be.empty;",
+              "});",
+              "",
+              "pm.test(\"Response contains soap:Envelope\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"soap:Envelope\");",
+              "});",
+              "",
+              "pm.test(\"Response contains soap:Body\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"soap:Body\");",
+              "});",
+              "",
+              "pm.test(\"Response contains IsValidISBN13Response\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"IsValidISBN13Response\");",
+              "});",
+              "",
+              "pm.test(\"Response contains IsValidISBN13Result\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"IsValidISBN13Result\");",
+              "});",
+              "",
+              "pm.test(\"Response contains boolean result\", function () {",
+              "    const body = pm.response.text();",
+              "    pm.expect(body.includes(\"true\") || body.includes(\"false\")).to.be.true;",
+              "});",
+              "",
+              "pm.test(\"Content-Type header exists\", function () {",
+              "    pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true;",
+              "});",
+              "",
+              "pm.test(\"Content-Type is XML\", function () {",
+              "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"xml\");",
+              "});",
+              "",
+              "pm.test(\"Response does not contain SOAP Fault\", function () {",
+              "    pm.expect(pm.response.text()).to.not.include(\"soap:Fault\");",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
-            "type": "text",
-            "value": "text/xml; charset=utf-8"
+            "value": "text/xml; charset=utf-8",
+            "type": "text"
           }
         ],
         "body": {
